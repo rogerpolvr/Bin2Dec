@@ -8,7 +8,7 @@ export default class Main extends Component {
   };
 
   handleInputChange = e => {
-    const binaryValue = e.target.value;
+    const binaryValue = this.isBinary(e.target.value);
     this.setState({
       newBinary: binaryValue
     });
@@ -17,6 +17,15 @@ export default class Main extends Component {
   handleSubmit = e => {
     e.preventDefault();
   };
+
+  onBinary = e => {
+    var charCode = e.which ? e.which : e.keyCode;
+    if (charCode < 48 || charCode > 49) {
+      e.preventDefault();
+    }
+  };
+
+  isBinary = num => {};
 
   render() {
     const { newBinary, newDecimal } = this.state;
@@ -30,6 +39,7 @@ export default class Main extends Component {
             placeholder="Binary value"
             value={newBinary}
             onChange={this.handleInputChange}
+            onKeyPress={this.onBinary}
           />
           <SubmitButton>
             <FaSync />
