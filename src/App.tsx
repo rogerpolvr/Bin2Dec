@@ -2,14 +2,11 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [binary, setBinary] = useState('');
-  const [decimal, setDecimal] = useState(Number);
+  const [binary, setBinary] = useState<string>('');
 
-  function convertBin2Dec(): void {
-    setDecimal(parseInt(binary, 2));
-    console.log(`Binary: ${binary}`);
-    console.log(`Decimal: ${decimal}`);
-  }
+  const bin2dec = () => {
+    if (binary !== '') return parseInt(binary, 2);
+  };
 
   return (
     <div className="App">
@@ -20,9 +17,8 @@ function App() {
           name="input"
           value={binary}
           onChange={e => setBinary(e.target.value)}
-          onKeyDown={convertBin2Dec}
         />
-        <p>{decimal}</p>
+        <h3>{bin2dec()}</h3>
       </header>
     </div>
   );
