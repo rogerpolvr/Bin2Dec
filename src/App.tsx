@@ -1,23 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [binary, setBinary] = useState('');
+  const [decimal, setDecimal] = useState(Number);
+
+  function convertBin2Dec(): void {
+    setDecimal(parseInt(binary, 2));
+    console.log(`Binary: ${binary}`);
+    console.log(`Decimal: ${decimal}`);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Bin2Dec</h1>
+        <label>Insira um numero binário</label>
+        <input
+          name="input"
+          value={binary}
+          onChange={e => setBinary(e.target.value)}
+          onKeyDown={convertBin2Dec}
+        />
+        <p>{decimal}</p>
       </header>
     </div>
   );
