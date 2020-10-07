@@ -8,6 +8,17 @@ function App() {
     if (binary !== '') return parseInt(binary, 2);
   };
 
+  const binaryCheck = (eventValue: string) => {
+    let value = Number(eventValue),
+      lastDigit = value % 10;
+
+    if (lastDigit < 2) {
+      setBinary(eventValue);
+    } else {
+      alert(`A Binary Number is made up of only 0s and 1s.`);
+    }
+  };
+
   return (
     <div className="container">
       <h1>Bin2Dec</h1>
@@ -15,7 +26,7 @@ function App() {
       <input
         name="input"
         value={binary}
-        onChange={e => setBinary(e.target.value)}
+        onChange={event => binaryCheck(event.target.value)}
       />
       <p>{bin2dec()}</p>
     </div>
