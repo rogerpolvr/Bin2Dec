@@ -25,6 +25,7 @@ function App() {
       <label>Enter a binary number, get a decimal conversion.</label>
       <input
         name="input"
+        maxLength={8}
         value={binary}
         onChange={event => binaryCheck(event.target.value)}
       />
