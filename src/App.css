@@ -12,42 +12,54 @@ body {
 body,
 input,
 button {
-  font: 16px Roboto, sans-serif;
+  font: 16px Roboto Mono, sans-serif;
 }
 
 html,
 body,
 #root {
   height: 100%;
+  color: #ffffff;
+  background-image: url(./assets/matrix.gif);
+  background-repeat: no-repeat;
+  background-size: 100% 130%;
 }
 
 div {
-  border: 1px solid red;
-
   display: flex;
   flex-direction: column;
-
   align-items: center;
   justify-content: space-around;
+  height: 50%;
+  /* background-color: #000000; */
+}
+
+.container {
+  display: flex;
+  justify-content: left;
+  height: 300px;
 }
 
 h1 {
-  size: 32px;
-  margin-bottom: 16px;
+  font-size: 52px;
+  margin-bottom: 15px;
 }
 
 label {
-  margin-bottom: 2px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  text-align: center;
 }
 
 input {
-  flex: 1;
-  height: 70px;
-  width: 400px;
-  border-radius: 15px;
-  padding: 0 24px;
+  border: solid 2px rgb(83, 92, 83);
+  border-radius: 10px;
+  height: 50px;
+  width: 300px;
+  padding: 10px;
 }
 
 p {
-  margin-top: 10px;
+  margin-top: 25px;
+  font-size: 32px;
 }

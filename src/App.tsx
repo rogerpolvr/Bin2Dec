@@ -9,9 +9,9 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Bin2Dec</h1>
-      <label>Insira um numero binário</label>
+      <label>Enter a binary number, get a decimal conversion.</label>
       <input
         name="input"
         value={binary}
